@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://gfx/light/darkness.png" type="Texture" id=1]
+
+[node name="darkness" type="Node2D" index="0"]
+
+position = Vector2( 32, 32 )
+
+[node name="sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 1 )
+
+

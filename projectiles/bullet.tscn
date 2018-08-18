@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://projectiles/bullet.gd" type="Script" id=1]
+[ext_resource path="res://gfx/bullet.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 2, 2 )
+_sections_unfolded = [ "Resource" ]
+
+[node name="bullet" type="KinematicBody2D" index="0"]
+
+position = Vector2( 192, 112 )
+input_pickable = false
+collision_layer = 16
+collision_mask = 5
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Pickable" ]
+MOTION_SPEED = 1200
+damage = 1
+explosive = false
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+show_behind_parent = true
+z_index = -2
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+visible = false
+shape = SubResource( 1 )
+_sections_unfolded = [ "Material", "Transform", "Z Index" ]
+
+
